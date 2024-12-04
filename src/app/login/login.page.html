@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <div class="login-wrapper">
+    <div class="login-container">
+      <!-- Agrega el título aquí -->
+      <h1 class="login-title">Login</h1>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <ion-item class="input-item">
+          <ion-label position="stacked">Usuario</ion-label>
+          <ion-input formControlName="username" placeholder="Ingresa Usuario" minlength="3"></ion-input>
+        </ion-item>
+        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
+          Error: Usuario inválido
+        </div>
+
+        <ion-item class="input-item">
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password" placeholder="Ingresa Contraseña" maxlength="6"></ion-input>
+        </ion-item>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+          Error: Contraseña inválida
+        </div>
+
+        <ion-item class="input-item">
+          <ion-label>Seleccionar Rol</ion-label>
+          <ion-select formControlName="role">
+            <ion-select-option value="Docente">Docente</ion-select-option>
+            <ion-select-option value="Alumno">Alumno</ion-select-option>
+            <ion-select-option value="Admin">Admin</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <div *ngIf="loginForm.get('role')?.invalid && loginForm.get('role')?.touched" class="error-message">
+          Error: Selecciona un rol
+        </div>
+        <ion-item lines="none" class="forgot-password">
+          <ion-label class="forgot-password-label" (click)="navigateToForgotPassword()">¿Olvidaste tu contraseña?</ion-label>
+        </ion-item>
+
+        <ion-button expand="block" type="submit [disabled]=loginForm.valid" class="login-button">Ingresar</ion-button>
+
+        <!-- Agrega aquí el enlace para olvidó tu contraseña -->
+      </form>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,21 @@
+.center-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.qr-image {
+  width: 100%;
+  max-width: 250px; /* Ajusta el tamaño máximo de la imagen */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para hacerlo más bonito */
+}
+
+.center-button {
+  margin-top: 20px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,88 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f0f0f0; // Fondo más claro para un mejor contraste
+}
+
+.login-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); // Sombra para darle profundidad
+  max-width: 350px;
+  width: 100%;
+  text-align: center; // Centra el contenido dentro del contenedor
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px; // Espacio debajo del título
+}
+
+.input-item {
+  --background: #f9f9f9;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); // Sombra leve en los campos de entrada
+  display: flex;
+  align-items: center;
+}
+
+ion-checkbox {
+  margin-right: 10px;
+}
+
+ion-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+ion-input {
+  --background: transparent;
+  --placeholder-color: #bbb;
+  font-size: 16px;
+}
+
+.login-button {
+  --background: #876000;
+  --border-radius: 5px;
+  --color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+
+.login-button:hover {
+  --background: #ea7500; // Cambiar color al pasar el mouse
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.forgot-password {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.forgot-password-label {
+  color: #007bff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forgot-password-label:hover {
+  text-decoration: underline;
+}

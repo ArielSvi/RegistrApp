@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Lenguaje</ion-card-title>
+      <ion-card-subtitle>Sección 005D</ion-card-subtitle>
+      <ion-card-subtitle>Asistencias: 6 de 7 clases</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngIf="alumnos.length === 0" class="no-alumnos">
+        No hay alumnos registrados.
+      </div>
+
+      <ion-list *ngIf="alumnos.length > 0">
+        <ion-item *ngFor="let alumno of alumnos">
+          <ion-label>
+            <h2>{{ alumno.nombreAlumno }}</h2>
+            <p>RUT: {{ alumno.rutAlumno }}</p>
+            <p>Carrera: {{ alumno.carreraAlumno }}</p>
+            <p>Asistencia: {{ alumno.asistenciaAlumno }}</p>
+            <p>Sección: {{ alumno.seccionAlumno }}</p>
+            <p>Fecha: {{ alumno.fechaAlumno}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-button (click)="marcarAsistencia()" expand="full">
+        Marcar Asistencia
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

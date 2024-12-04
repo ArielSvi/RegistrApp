@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>crearqr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="center-card">
+    <div *ngIf="createdCode">
+      <qrcode [qrdata]="createdCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+  </ion-card>
+  <ion-button (click)="volverAsistencia()" expand="full" class="center-button">Volver a Clases</ion-button>
+  
+  
+</ion-content>

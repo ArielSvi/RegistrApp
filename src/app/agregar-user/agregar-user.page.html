@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agregar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Datos Personales</ion-card-title>
+      <ion-card-subtitle>Formulario</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input 
+        type="text" 
+        [(ngModel)]="nombre" 
+        placeholder="Ingrese nombre" 
+        required 
+        (ionBlur)="validateNombre()">
+      </ion-input>
+      <ion-text color="danger" *ngIf="nombreError">{{ nombreError }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Rut</ion-label>
+      <ion-input 
+        type="number" 
+        [(ngModel)]="rut" 
+        placeholder="Ingrese rut" 
+        maxlength="9" 
+        minlength="9" 
+        required 
+        (ionBlur)="validateRut()">
+      </ion-input>
+      <ion-text color="danger" *ngIf="rutError">{{ rutError }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input 
+        type="number" 
+        [(ngModel)]="pass" 
+        placeholder="Ingrese 6 dígitos" 
+        maxlength="6" 
+        minlength="6" 
+        required 
+        (ionBlur)="validatePass()">
+      </ion-input>
+      <ion-text color="danger" *ngIf="passError">{{ passError }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Nivel</ion-label>
+      <ion-select 
+        [(ngModel)]="nivel" 
+        placeholder="Seleccione un nivel" 
+        required 
+        (ionBlur)="validateNivel()">
+        <ion-select-option value="Docente">Docente</ion-select-option>
+        <ion-select-option value="Alumno">Alumno</ion-select-option>
+        <ion-select-option value="Admin">Admin</ion-select-option>
+      </ion-select>
+      <ion-text color="danger" *ngIf="nivelError">{{ nivelError }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Carrera</ion-label>
+      <ion-select [(ngModel)]="carrera" placeholder="Seleccione una Carrera">
+        <ion-select-option value="Informatica">Informatica</ion-select-option>
+        <ion-select-option value="Mecanica">Mecanica</ion-select-option>
+        <ion-select-option value="Enfermeria">Enfermeria</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" (click)="agregar(nivel)">Registrar</ion-button>
+    <ion-button expand="block"(click)="goToLogin()"  >Volver</ion-button>
+  </ion-card>
+
+  <h1>Listar Alumnos</h1>
+  <ion-list *ngFor="let user of personas">
+    <ion-card>
+      <ion-label> Alumno: {{user.nombre}} - rut: {{user.rut}} - Nivel: {{user.nivel}}</ion-label>
+    </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-card id="bienvenida-cont">
+    <ion-card-header>
+      <ion-card-title>¡Bienvenido/a {{role}} {{usuario}}!</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <ion-avatar id="logo-perfil-cont">
+          <img src="https://www.gravatar.com/avatar?d=mp&s=200" alt="Avatar de usuario">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="9">
+        <ion-card id="lorem-cont">
+          <ion-card-content >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis volutpat.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card id="imagen-cont">
+    <img src="/assets/icon/colegio.jpg"  alt="elqr" class="qr-image">
+  </ion-card>
+
+  <ion-item lines="full"></ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card id="calendario-cont">
+          <ion-datetime display-format="MM/DD/YYYY"></ion-datetime>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
