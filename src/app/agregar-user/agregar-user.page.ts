@@ -18,7 +18,7 @@ interface Alumno {
   rutAlumno: string;
   carreraAlumno: string;
   asistenciaAlumno: string;
-  identificadorAlumno: string;
+  identificador: string;
   seccionAlumno: string;
   fechaAlumno: string;
 }
@@ -140,8 +140,8 @@ export class AgregarUserPage implements OnInit {
       carreraAlumno: this.carrera,
       asistenciaAlumno: this.asistenciaAlumno,
       seccionAlumno: this.seccionAlumno,
-      fechaAlumno:this.fechaAlumno,
-      identificadorAlumno: Date.now().toString()
+      fechaAlumno: this.fechaAlumno,
+      identificador: Date.now().toString()
     };
   
     this.alumnos.push(nuevoAlumno);
@@ -151,7 +151,7 @@ export class AgregarUserPage implements OnInit {
       alert('Alumno Agregado');
       await this.listar();
     } else {
-      alert('Error no se pudo agregar');
+      alert('Error: No se pudo agregar o ya existe');
     }
   
     // Limpiar los campos del formulario
@@ -159,9 +159,14 @@ export class AgregarUserPage implements OnInit {
     this.rut = "";
     this.carrera = "";
     this.pass = "";
-    this.nivel = "";
+    this.nivel = "";
   }
   
 
-  async listar() {}
+  async listar() {
+    this.personas = await this.storageservice.obtenerTodos('personas');
+    this.alumnos = await this.storageservice.obtenerTodos('alumnos');
+    console.log('Personas:', this.personas);
+    console.log('Alumnos:', this.alumnos);
+  }
 }
